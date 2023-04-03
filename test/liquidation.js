@@ -3,7 +3,7 @@ const { network, ethers } = require("hardhat");
 const { BigNumber, utils }  = require("ethers");
 const { writeFile } = require('fs');
 
-describe("Liquidation", function () {
+describe("liquidation", function () {
   it("test", async function () {
     await network.provider.request({
         method: "hardhat_reset",
@@ -25,7 +25,7 @@ describe("Liquidation", function () {
         params: [liquidator],
     }));
 
-    const LiquidationOperator = await ethers.getContractFactory("LiquidationOperator");
+    const LiquidationOperator = await ethers.getContractFactory("LiquidationOperator_q2");
     const liquidationOperator = await LiquidationOperator.deploy(overrides = {gasPrice: gasPrice});
     await liquidationOperator.deployed();
 
